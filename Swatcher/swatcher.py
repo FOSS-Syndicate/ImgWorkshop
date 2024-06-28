@@ -1,3 +1,10 @@
+from PIL import Image
+
+def create_image(name, color):
+    im = Image.new("RGB", (50,50), color)
+    im.save(name + ".png")
+
+
 def read_file():
     with open("./colors.txt","r") as file:
         for line in file:

@@ -1,9 +1,10 @@
-import base64
 from PIL import Image
-from io import BytesIO
 
-with open("base.jpg", "rb") as image_file:
-    data = base64.b64encode(image_file.read())
+# Open the image file
+with open("base.jpg", "rb") as f:
+    image = Image.open(f)
 
-im = Image.open(BytesIO(base64.b64decode(data)))
-print(im)
+import base64
+# Convert the image to base64 format
+with open("base.jpg", "rb") as f:
+    encoded_image = base64.b64encode(f.read())

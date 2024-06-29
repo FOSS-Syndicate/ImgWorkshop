@@ -20,6 +20,23 @@ def swatcher():
     read_file(filename)
 
 
+def encode_bas64():
+    filename = input("Enter the path to the image to be converted to Base64: ")
+    # Open the image file
+    with open(filename, "rb") as f:
+        image = Image.open(f)
+
+    import base64
+    # Convert the image to base64 format
+    with open("base.jpg", "rb") as f:
+        encoded_image = base64.b64encode(f.read())
+
+    # Save the encoded image to a file
+    with open(f"./base64-output/{filename}.txt", "w") as f:
+        f.write(encoded_image.decode("utf-8"))
+    print("Saved the output .txt in the bas64-out directory")
+
+
 def select_choice():
     while True:
         print("1. Swatch Generation")
@@ -36,6 +53,7 @@ def select_choice():
             break
         elif user_input == "3":
             print("Base64 Encoder/") # To Link Script
+            encode_bas64()
             break
         elif user_input == "q":
             print("Bye Bye!!") # To Link Script

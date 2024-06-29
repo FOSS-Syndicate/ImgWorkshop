@@ -8,3 +8,7 @@ import base64
 # Convert the image to base64 format
 with open("base.jpg", "rb") as f:
     encoded_image = base64.b64encode(f.read())
+
+# Save the encoded image to a file
+with open("image.txt", "w") as f:
+    f.write(encoded_image.decode("utf-8"))

@@ -1,7 +1,5 @@
 from PIL import Image
 
-
-
 # to open the image
 image = Image.open("base.jpg")
 width, height = image.size

@@ -1,3 +1,5 @@
+import subprocess
+
 def select_choice():
 
     while True:
@@ -8,7 +10,7 @@ def select_choice():
 
         if user_input == "1":
             print("Swatcher/")  # To Link Script
-            break
+            subprocess.call("./swatcher.py", shell=True)
         elif user_input == "2":
             print("Watermarker/") # To Link Script
             break
